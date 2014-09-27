@@ -29,6 +29,9 @@ autocmd Filetype gitcommit    setlocal spell textwidth=72
 " Change leader
 let mapleader=","
 
+" Less shift
+nmap ; :
+
 " Misc flags
 set is
 set hls
@@ -57,6 +60,11 @@ set clipboard=unnamed
 Bundle 'jnurmine/Zenburn'
 let g:zenburn_high_Contrast=1
 colorscheme zenburn
+
+" Seoul
+Bundle 'junegunn/seoul256.vim'
+let g:seoul256_background = 233
+colo seoul256
 
 "Autoident two staps
 set shiftwidth=2
@@ -132,6 +140,7 @@ Bundle 'Lokaltog/vim-easymotion'
 
 "Emmet
 Bundle 'mattn/emmet-vim'
+map <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "Syntastic
 Bundle 'scrooloose/Syntastic'
@@ -147,3 +156,18 @@ autocmd BufWinLeave * call clearmatches()
 
 "" Quickly switch to the last file
 nnoremap <leader><space> <c-^>
+
+" Goyo
+Bundle 'junegunn/goyo.vim'
+
+"Vimwiki
+Bundle 'vimwiki/vimwiki'
+  let g:vimwiki_list = [{'path': '~/.wiki', 
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+"Gist
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_post_private = 1
